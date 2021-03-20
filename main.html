@@ -1,0 +1,194 @@
+<html>
+<head>
+	<title>Calculator</title>
+
+<script type="text/javascript">
+	function insert(num){
+		document.form.textview.value+=num
+	}
+
+	function clean(){
+		document.form.textview.value="";
+	}
+
+	function sum(){
+		var exp=document.form.textview.value;
+		if(exp){
+			document.form.textview.value=eval(exp)
+		}
+	}
+
+	function back(){
+		var exp=document.form.textview.value;
+		document.form.textview.value=exp.substring(0, exp.length-1)
+	}
+</script>
+
+<style type="text/css" media="screen">
+
+*{
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	color:#737373;
+
+}
+
+.box{
+	
+	width:250;
+	height:424;
+	box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
+	background:#eee;
+	position:absolute;
+	margin:5px;
+	top:10%;
+	left:30%;
+	padding-top:12px;
+	padding-bottom:12px;
+	
+}
+
+.box input[type="button"]{
+	border:none;
+	width:55px;
+	height:70px;
+	cursor:pointer;
+	margin:2px;
+	font-size:20px;
+	outline:0;
+	background:#eee;
+}
+
+.box input[type="textview"]{
+	border:none;
+	background:#eee;
+	text-align:right;
+	width:250px;
+	height:50px;
+	font-size:38px;
+	outline:0;
+	margin:0px 2px 0px 0px;
+}
+
+.box input[type="button"]:hover{
+	border:none;
+	background:#ffd1b3;
+}
+
+.box input[type="textview"]:hover{
+	border:none;
+	background:#fff0e6;
+}
+
+.box p{
+	color:#eee;
+	font-size:12px;
+	position:absolute;
+	bottom:0%;
+	left:10%;
+}
+
+
+
+.theme{
+	display:
+	align-items:center;
+	position:absolute;
+	top:35%;
+	left:5%;
+
+}
+
+.theme p{
+	padding:10px;
+}
+
+
+.theme p a{
+	text-decoration:none;
+}
+
+
+.light{
+	display:flex;
+	padding:10px;
+	background:#eee;
+	padding-right:40px;
+}
+
+.dark{
+	display:flex;
+	padding:10px;
+}
+
+h1{
+	color:orange;
+	font-size:120px;
+}
+
+.logo{
+	position:absolute;
+	left:55%;
+	top:30%;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+	<div class="logo">
+		<h1></h1>
+	</div>
+	
+	<div class="box">
+		<form name="form">
+			<input type="textview" name="textview" placeholder="0" size="10">
+		</form>
+
+		<input type="button" value="CE" onclick="clean()">
+		<input type="button" value="C" onclick="clean()">
+		<input type="button" value="<" onclick="back()">
+		<input type="button" value="M+" onclick="insert(M+)"><br>
+
+		<input type="button" value="7" onclick="insert(7)">
+		<input type="button" value="8" onclick="insert(8)">
+		<input type="button" value="9" onclick="insert(9)">
+		<input type="button" value="/" onclick="insert('/')"><br>
+
+		<input type="button" value="4" onclick="insert(4)">
+		<input type="button" value="5" onclick="insert(5)">
+		<input type="button" value="6" onclick="insert(6)">
+		<input type="button" value="x" onclick="insert('*')"><br>
+
+		<input type="button" value="1" onclick="insert(1)">
+		<input type="button" value="2" onclick="insert(2)">
+		<input type="button" value="3" onclick="insert(3)">
+		<input type="button" value="-" onclick="insert('-')"><br>
+
+		<input type="button" value="." onclick="insert('.')">
+		<input type="button" value="0" onclick="insert(0)">
+		<input type="button" value="=" onclick="sum()">
+		<input type="button" value="+" onclick="insert('+')"><br>
+
+		<p>Created By Ravindu Madhushankha</p>
+
+	</div>
+
+	<div class="theme">
+		<div class="light">
+			<img src="icons8_sun_50px_3.png">
+			<p><a href="main.html">Light mode</a></p>
+		</div>
+
+		<div class="dark">
+			<img src="icons8_moon_symbol_50px_4.png">
+			<p><a href="main2.html">Dark mode</a></p>
+		</div>
+	</div>
+
+</body>
+</html>

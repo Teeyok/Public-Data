@@ -1,0 +1,177 @@
+
+<script type="text/javascript">
+	function insert(num){
+		document.form.textview.value=document.form.textview.value+num
+	}
+	
+	function equal(){
+		var exp=document.form.textview.value;
+		if(exp){
+			document.form.textview.value=eval(exp)
+		}
+	}
+
+	function clean(){
+		document.form.textview.value="";
+	}
+
+	function back(){
+		var exp=document.form.textview.value;
+		document.form.textview.value=exp.substring(0, exp.length-1);
+	}
+
+</script>
+
+
+
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator - Dark Theme</title>
+
+</head>
+
+<style>
+*{
+	padding:0;
+	margin:0;
+	font-family:sans-serif;
+	color:#eee;
+	background: linear-gradient(to bottom, #797979 0%, #000 100%);
+	text-decoration:none;
+	
+
+}
+body{
+	
+	
+}
+
+.box{
+	position:absolute;
+	width:246px;
+	height:450px;
+	box-shadow:5px 10px 20px rgba(0, 0, 0, 0.2);
+	padding:5px;
+	background:#666666;
+	-webkit-box-reflect:below 1px linear-gradient(transparent, #0004);
+	padding-top:10px;
+	position:absolute;
+	top:20%;
+	left:20%;
+	
+	
+}
+
+
+.box input[type="button"]{
+	width:50px;
+	height:70px;
+	margin:4px;
+	border:none;
+	outline:0;
+	background:#666666;
+	font-size:20px;
+	cursor:pointer;
+
+}
+
+.textview{
+	width:248px;
+	height:50px;
+	padding:5px;
+	border:none;
+	font-size:30px;
+	background:#666666;
+	outline:0;
+	text-align:right;
+}
+
+.box input[type="button"]:hover{
+	background:orange;
+	color:#000;
+
+}
+
+.box input[type="textview"]:hover{
+	abackground:#fff5e6;
+}
+
+p{
+background:#666666;
+color:#666666;
+text-align:center;
+font-size:12px;
+}
+
+.box sum input[type="button"]:hover{
+	background:orange;
+}
+
+
+
+.theme p a{
+	display:flex;
+	display:block;
+	margin:0px;
+	padding:0px;
+	background:#797979;
+	
+	
+}
+
+
+</style>
+
+
+<body>
+
+	<div class="theme">
+		
+		<p><a href="index.html">Light Theme</a></p>
+		
+	</div>
+
+
+	<div class="box">
+	
+	<form name="form">
+		<input class="textview" type="textview" placeholder="0" name="textview"><br>
+	</form>
+		<input type="button" value="CE" onclick="clean()">
+		<input type="button" value="C" onclick="clean()">
+		<input type="button" value="<" onclick="back(3)">
+		<input type="button" value="M+" onclick="insert(M+)"><br>
+
+		<input type="button" value="7" onclick="insert(7)">
+		<input type="button" value="8" onclick="insert(8)">
+		<input type="button" value="9" onclick="insert(9)">
+		<input type="button" value="/" onclick="insert('/')"><br>
+
+		<input type="button" value="4" onclick="insert(4)">
+		<input type="button" value="5" onclick="insert(5)">
+		<input type="button" value="6" onclick="insert(6)">
+		<input type="button" value="x" onclick="insert('*')"><br>
+
+		<input type="button" value="1" onclick="insert(1)">
+		<input type="button" value="2" onclick="insert(2)">
+		<input type="button" value="3" onclick="insert(3)">
+		<input type="button" value="-" onclick="insert('-')"><br>
+
+		<input type="button" value="." onclick="insert('.')">
+		<input type="button" value="0" onclick="insert(0)">
+		<input class="sum" type="button" value="=" onclick="equal()">
+		<input type="button" value="+" onclick="insert('+')"><br>
+
+		<p>Created by Ravindu Madhushankha</p>
+
+	</div>
+
+
+
+
+</body>
+</html>
+
+
